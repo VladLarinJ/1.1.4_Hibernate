@@ -19,7 +19,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void createUsersTable() {
-        String sql = "CREATE TABLE USERS (id integer primary key AUTO_INCREMENT, name varchar(50) not null, lastName varchar(50) not null, age integer not null) ;";
+        String sql = "CREATE TABLE USERS (id integer primary key AUTO_INCREMENT, name varchar(50) not null, lastName varchar(50) not null, age integer not null);";
         try (Statement statement = connection.prepareStatement(sql)) {
             connection.setAutoCommit(false);
             statement.executeUpdate(sql);

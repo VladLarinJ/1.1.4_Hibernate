@@ -1,6 +1,7 @@
 package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.dao.UserDao;
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
@@ -9,7 +10,8 @@ import org.hibernate.boot.archive.internal.UrlInputStreamAccess;
 
 public class Main {
     public static void main(String[] args) {
-        UserService userService = new UserServiceImpl(new UserDaoJDBCImpl());
+        UserService userService = new UserServiceImpl(new UserDaoHibernateImpl());
+        System.out.println("OK");
 
         userService.createUsersTable();
         userService.saveUser("Name1", "LastName1", (byte) 20);

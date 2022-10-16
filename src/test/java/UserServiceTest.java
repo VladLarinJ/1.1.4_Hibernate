@@ -1,3 +1,4 @@
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
@@ -10,8 +11,8 @@ import java.sql.Connection;
 import java.util.List;
 
 public class UserServiceTest {
-    private final UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
-    private final UserService userService = new UserServiceImpl(userDaoJDBC);
+    private final UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
+    private final UserService userService = new UserServiceImpl(userDaoHibernate);
 
     private final String testName = "Ivan";
     private final String testLastName = "Ivanov";

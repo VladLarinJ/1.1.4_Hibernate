@@ -7,24 +7,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-//@Entity
-@Table//(name = "USERS")
+@Entity
+@Table(name = "USERS")
 public class User {
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column//(name = "NAME", length = 50)
+    @Column(name = "NAME")
     private String name;
 
-    @Column//(name = "LASTNAME", length = 50)
+    @Column(name = "LASTNAME")
     private String lastName;
 
-    @Column//(name = "AGE")
+    @Column(name = "AGE")
     private Byte age;
 
     public User() {
-
     }
 
     public User(String name, String lastName, Byte age) {
